@@ -15,7 +15,7 @@ const postRoomInWish = async (req: Request, res: Response) => {
 
   try {
     const data = await roomService.postRoomInWish(roomId, wishId);
-
+    console.log(data);
     res.status(statusCode.CREATED).send(util.success(statusCode.CREATED, message.SUCCESS, data));
   } catch (error) {
     console.log(error);

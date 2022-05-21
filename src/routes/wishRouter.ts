@@ -4,5 +4,5 @@ import wishController from '../controllers/wishController';
 
 const router: Router = Router();
 
-router.post('/wish/:wishId', wishController.postRoomInWish);
+router.post('/:wishId', wishController.postRoomInWish);
 export default router;
