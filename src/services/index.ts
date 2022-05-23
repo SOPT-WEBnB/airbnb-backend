@@ -1,3 +1,5 @@
+import wishService from "./wishService"
 import roomService from './roomService';
 
-export { roomService };
+export { roomService, wishServer};
+

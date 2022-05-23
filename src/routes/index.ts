@@ -1,4 +1,4 @@
-//router index file
+
 import { Router } from 'express';
 import wishRouter from './wishRouter';
 
