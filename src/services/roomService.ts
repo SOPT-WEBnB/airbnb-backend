@@ -1,13 +1,9 @@
+import mongoose from 'mongoose';
 import Room from '../models/room';
-const postRoomInWish = async (wishId: string, roomId: string) => {
+import Wish from '../models/wish';
+const postRoomInWish = async (roomId: string, wishId: string) => {
   try {
-    const data = await Room.updateOne(
-      { _id: wishId },
-      {
-        $push: { rooms: { _id: roomId } },
-      },
-      { new: true },
-    );
+    const data = await Wish.updateOne({ _id: wishId }, { $push: { rooms: roomId } });
     return data;
   } catch (error) {
     console.log(error);
