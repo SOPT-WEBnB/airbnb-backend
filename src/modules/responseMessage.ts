@@ -3,9 +3,7 @@ const message = {
     NOT_FOUND: '존재하지 않는 자원',
     BAD_REQUEST: '잘못된 요청',
     INTERNAL_SERVER_ERROR: '서버 내부 오류',
-
     //위시리스트 
-    CREATE_WISH_SUCCESS: '위시리스트 생성 완료'
-}
-
+  SUCCESS: '성공',
+};
 export default message;
