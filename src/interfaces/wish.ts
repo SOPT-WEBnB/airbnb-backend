@@ -1,5 +1,9 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 export interface WishInfo {
-    name: string;
+  name: string;
+  rooms: WishRoomInfo[];
+}
+export interface WishRoomInfo {
+  room: mongoose.Types.ObjectId;
 }
