@@ -38,7 +38,6 @@ const createWish = async (req: Request, res: Response) => {
  */
 
 const getWishes = async (req: Request, res: Response) => {
-
   try {
     const data = await wishService.getWishes();
 
@@ -47,13 +46,12 @@ const getWishes = async (req: Request, res: Response) => {
     }
 
     res.status(statusCode.OK).send(util.success(statusCode.OK, message.READ_WISH_SUCCESS, data));
-
   } catch (error) {
     console.log(error);
     //서버 내부에서 오류 발생
     res.status(statusCode.INTERNAL_SERVER_ERROR).send(util.fail(statusCode.INTERNAL_SERVER_ERROR, message.INTERNAL_SERVER_ERROR));
   }
-}
+};
 
 const postRoomInWish = async (req: Request, res: Response) => {
   const error = validationResult(req);
@@ -91,6 +89,6 @@ const searchRoomInWish = async (req: Request, res: Response) => {
 export default {
   postRoomInWish,
   searchRoomInWish,
-  getWishes
-  createWish
+  getWishes,
+  createWish,
 };
