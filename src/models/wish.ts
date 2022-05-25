@@ -6,10 +6,12 @@ const WishSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  rooms: {
-    type: [mongoose.Types.ObjectId],
-    ref: 'Room',
-  },
+  rooms: [
+    {
+      type: mongoose.Types.ObjectId,
+      ref: 'Room',
+    },
+  ],
 });
 
 export default mongoose.model<WishInfo & mongoose.Document>('Wish', WishSchema);

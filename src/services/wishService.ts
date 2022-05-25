@@ -7,6 +7,7 @@ const createWish = async (wishCreateDto: WishCreateDto): Promise<PostBaseRespons
   try {
     const wish = new Wish({
       name: wishCreateDto.name,
+      rooms: [],
     });
 
     await wish.save();
