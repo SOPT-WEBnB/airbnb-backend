@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import { RoomCreateDto } from '../DTO/roomCreateDTO';
 import Room from '../models/room';
 import Wish from '../models/wish';
 
@@ -24,7 +25,21 @@ const searchRoomInWish = async (wishId: string) => {
   }
 };
 
+const createRoom = async (roomCreateDto: RoomCreateDto) => {
+  try {
+    const room = new Room(roomCreateDto);
+
+    await room.save();
+
+    return room;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+};
+
 export default {
   postRoomInWish,
   searchRoomInWish,
+  createRoom,
 };

@@ -1,5 +1,4 @@
-import wishController from "./wishController"
+import roomController from './roomController';
+import wishController from './wishController';
 // controller index file
-export {
-    wishController
-}
+export { wishController, roomController };
