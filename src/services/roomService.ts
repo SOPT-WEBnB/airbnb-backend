@@ -6,6 +6,7 @@ import Wish from '../models/wish';
 const postRoomInWish = async (roomId: string, wishId: string) => {
   try {
     const data = await Wish.updateOne({ _id: wishId }, { $push: { rooms: roomId } });
+    const like = await Room.findByIdAndUpdate(roomId, { like: true });
     return data;
   } catch (error) {
     console.log(error);
