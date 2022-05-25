@@ -7,7 +7,7 @@ const WishSchema = new mongoose.Schema({
     required: true,
   },
   rooms: {
-    type: mongoose.Types.ObjectId,
+    type: [mongoose.Types.ObjectId],
     ref: 'Room',
   },
 });

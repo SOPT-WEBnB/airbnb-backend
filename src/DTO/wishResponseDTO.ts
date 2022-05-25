@@ -1,6 +1,7 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 export interface WishResponseDto {
-    _id: mongoose.Schema.Types.ObjectId;
-    name: string;
+  _id: mongoose.Schema.Types.ObjectId;
+  name: string;
+  rooms?: string[];
 }
