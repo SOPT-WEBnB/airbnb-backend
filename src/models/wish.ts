@@ -8,10 +8,8 @@ const WishSchema = new mongoose.Schema({
   },
   rooms: [
     {
-      room: {
-        type: mongoose.Types.ObjectId,
-        ref: 'Room',
-      },
+      type: mongoose.Types.ObjectId,
+      ref: 'Room',
     },
   ],
 });
