@@ -6,5 +6,6 @@ const message = {
   //위시리스트
   SUCCESS: '성공',
   CREATE_WISH_SUCCESS: '위시리스트 생성 성공',
+  READ_WISH_SUCCESS: '위시리스트 조회 성공'
 };
 export default message;

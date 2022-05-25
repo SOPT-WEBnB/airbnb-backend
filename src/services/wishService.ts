@@ -1,5 +1,6 @@
 import { PostBaseResponseDto } from "../DTO/postBaseResponseDTO";
 import { WishCreateDto } from "../DTO/wishCreateDTO";
+import { WishResponseDto } from "../DTO/wishResponseDTO";
 import Wish from "../models/wish";
 
 
@@ -21,6 +22,22 @@ const createWish = async (wishCreateDto: WishCreateDto): Promise<PostBaseRespons
     }
 }
 
+const getWishes = async (): Promise<WishResponseDto[] | null> => {
+    try {
+        const wish = await Wish.find({});
+
+        if (!wish) {
+            return null;
+        }
+
+        return wish;
+    } catch (error) {
+        console.log(error);
+        throw error;
+    }
+}
+
 export default {
-    createWish
+    createWish,
+    getWishes
 }
