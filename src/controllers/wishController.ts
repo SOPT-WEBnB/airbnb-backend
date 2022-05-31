@@ -18,7 +18,7 @@ const createWish = async (req: Request, res: Response) => {
   // if (!error.isEmpty()) {
   //     return res.status(statusCode.BAD_REQUEST).send(util.fail(statusCode.BAD_REQUEST, message.NULL_VALUE));
   // }
-
+  res.setHeader('Access-Control-Allow-Headers', '*');
   const wishCreateDto: WishCreateDto = req.body;
 
   try {
@@ -38,6 +38,7 @@ const createWish = async (req: Request, res: Response) => {
  */
 
 const getWishes = async (req: Request, res: Response) => {
+  res.setHeader('Access-Control-Allow-Headers', '*');
   try {
     const data = await wishService.getWishes();
 
@@ -54,6 +55,7 @@ const getWishes = async (req: Request, res: Response) => {
 };
 
 const postRoomInWish = async (req: Request, res: Response) => {
+  res.setHeader('Access-Control-Allow-Headers', '*');
   const error = validationResult(req);
   if (!error.isEmpty()) {
     return res.status(statusCode.BAD_REQUEST).send(util.fail(statusCode.BAD_REQUEST, message.NULL_VALUE));
@@ -71,6 +73,7 @@ const postRoomInWish = async (req: Request, res: Response) => {
 };
 
 const searchRoomInWish = async (req: Request, res: Response) => {
+  res.setHeader('Access-Control-Allow-Headers', '*');
   const error = validationResult(req);
   if (!error.isEmpty()) {
     return res.status(statusCode.BAD_REQUEST).send(util.fail(statusCode.BAD_REQUEST, message.NULL_VALUE));

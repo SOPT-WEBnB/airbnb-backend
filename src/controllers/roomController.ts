@@ -10,9 +10,9 @@ import { validationResult } from 'express-validator';
 
 const createRoom = async (req: Request, res: Response) => {
   const roomCreateDto: RoomCreateDto = req.body;
+  res.setHeader('Access-Control-Allow-Headers', '*');
   try {
     const data = await roomService.createRoom(roomCreateDto);
-
     res.status(statusCode.CREATED).send(util.success(statusCode.CREATED, message.SUCCESS, data));
   } catch (error) {
     console.log(error);
