@@ -9,12 +9,14 @@ connectDB();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(
-  cors({
-    origin: ['http://localhost:3000'],
-    credentials: true,
-  }),
-);
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH');
+  res.header('Access-Control-Allow-Headers', 'X-Requested-With, content-type, x-access-token');
+  next();
+});
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(routes); //라우터
 // error handler
 
