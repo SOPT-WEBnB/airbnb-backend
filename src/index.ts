@@ -4,17 +4,14 @@ const app = express();
 import connectDB from './loaders/db';
 import routes from './routes';
 require('dotenv').config();
-
+import config from './config';
 connectDB();
 
 app.use(
   cors({
     credentials: true,
-    origin: [
-      "http://localhost:3000",
-      "13.209.22.56",
-    ],
-  })
+    origin: ['http://localhost:3000', config.baseurl],
+  }),
 );
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
